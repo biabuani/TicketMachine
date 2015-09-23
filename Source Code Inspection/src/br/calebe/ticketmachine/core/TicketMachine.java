@@ -24,12 +24,13 @@ public class TicketMachine {
         for (int i = 0; i < papelMoeda.length && !achou; i++) {
             if (papelMoeda[i] == quantia) {
                 achou = true;
+                this.saldo += quantia;
             }
         }
         if (!achou) {
             throw new PapelMoedaInvalidaException();
         }
-        this.saldo += quantia;
+        
     }
 
     public int getSaldo() {
